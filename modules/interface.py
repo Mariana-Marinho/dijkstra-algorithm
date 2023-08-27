@@ -75,6 +75,3 @@ def criar_interface_grafica(grafo):
     resultado_label.grid(row=3, columnspan=2, pady=10)
 
     root.mainloop()
-
-# Chame a função criar_interface_grafica passando o seu grafo como argumento
-# criar_interface_grafica(grafo)
