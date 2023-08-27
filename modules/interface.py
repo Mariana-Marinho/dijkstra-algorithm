@@ -32,14 +32,16 @@ def criar_interface_grafica(grafo):
 
     def plotar_grafo_com_rota(graph, route):
         G = nx.Graph()
-        for source, target, weight in route:
-            G.add_edge(source, target, weight=weight)
-
+        
+        for vertice_origem, conexoes in graph.items():
+            for vertice_destino, peso in conexoes.items():
+                G.add_edge(vertice_origem, vertice_destino, weight=peso)
+        
         pos = nx.spring_layout(G, k=0.25)
-        nx.draw(G, pos, with_labels=True)
+        nx.draw(G, pos, with_labels=True, node_size=300, font_size=8)
         path_edges = [(source, target) for source, target, _ in route]
         nx.draw_networkx_edges(G, pos, edgelist=path_edges,
-                               edge_color='r', width=3)
+                               edge_color='r', width=4)
         plt.show()
 
     ecmin = dijkstra.EncontradorCaminhoMinimo(grafo)
@@ -73,3 +75,6 @@ def criar_interface_grafica(grafo):
     resultado_label.grid(row=3, columnspan=2, pady=10)
 
     root.mainloop()
+
+# Chame a função criar_interface_grafica passando o seu grafo como argumento
+# criar_interface_grafica(grafo)
