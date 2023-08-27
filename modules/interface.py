@@ -1,6 +1,9 @@
 from modules import dijkstra
 import tkinter as tk
 from tkinter import ttk
+import networkx as nx
+import matplotlib.pyplot as plt
+
 
 def criar_interface_grafica(grafo):
     def encontrar_melhor_caminho():
@@ -17,6 +20,27 @@ def criar_interface_grafica(grafo):
             f"{caminho[i]} --> {caminho[i + 1]} (peso {grafo[caminho[i]][caminho[i + 1]]})" for i in
             range(len(caminho) - 1))
         resultado_label.config(text=f'MELHOR CAMINHO:\n{caminho_formatado}\nTOTAL DOS PESOS DO CAMINHO: {peso}\nFIM')
+
+        rota = fazer_rota(caminho, grafo)
+        plotar_grafo_com_rota(grafo, rota)
+    
+    def fazer_rota(caminh, grafo):
+        rota = []
+        for i in range(len(caminh)-1):
+            rota.append((caminh[i], caminh[i+1], grafo[caminh[i]][caminh[i+1]]))
+        return rota
+
+    def plotar_grafo_com_rota(graph, route):
+        G = nx.Graph()
+        for source, target, weight in route:
+            G.add_edge(source, target, weight=weight)
+
+        pos = nx.spring_layout(G, k=0.25)
+        nx.draw(G, pos, with_labels=True)
+        path_edges = [(source, target) for source, target, _ in route]
+        nx.draw_networkx_edges(G, pos, edgelist=path_edges,
+                               edge_color='r', width=3)
+        plt.show()
 
     ecmin = dijkstra.EncontradorCaminhoMinimo(grafo)
 
