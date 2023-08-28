@@ -1,5 +1,8 @@
-from modules import alter_database, interface, dijkstra
+from modules import alter_database, interface, dijkstra, setup
 import data_base
+
+#instala os pacotes
+setup.install_dependencies()
 
 # altera o peso dos caminhos entre usuários
 alter_database.alterar_pesos_arquivo("data_base/database.txt", 1, 15)
