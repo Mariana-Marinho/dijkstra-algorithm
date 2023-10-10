@@ -10,6 +10,7 @@ Para resolver esse desafio, este projeto utiliza o algoritmo de Dijkstra para ca
 
 **Conteúdo:** A base contém nós, variando de 1 a 1133, a conexão entre nós e o peso da aresta, no formato (nó conexão peso). O peso original entre quaisquer vértices era de 1, por esse motivo randomizamos pesos entre 1 e 15 para variá-lo.
 
+**Discentes:** Aldo dos Santos Ferreira Lemos (asfl) e Mariana Marinho da Silva Andrade (mmsa).
 ## Implementação
 
 **Algoritmo Utilizado:** Dijkstra
