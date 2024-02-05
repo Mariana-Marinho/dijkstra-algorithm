@@ -60,6 +60,10 @@ Houve uma certa dificuldade em encontrar uma base de dados viável e em como plo
 <img src=".\assets\grafo_2.1.jpeg" />
 <img src=".\assets\grafo_2.2.jpeg" />
 
+## Colaboradores
+
+- Aldo dos Santos Ferreira Lemos (asfl@cin.ufpe.br)
+- Mariana Marinho da Silva Andrade (mmsa@cin.ufpe.br)
 
 ## Referências
 
